@@ -1,19 +1,16 @@
 package es.flaviojmend.controller;
 
-import es.flaviojmend.data.entity.Employee;
-import es.flaviojmend.data.repo.EmployeeRepository;
+import es.flaviojmend.persistence.entity.Employee;
+import es.flaviojmend.persistence.repo.EmployeeRepository;
+import es.flaviojmend.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.net.URI;
 
 /**
  * Created by flavio.mendes on 22/08/2016.
@@ -25,17 +22,17 @@ public class EmployeeController {
 
 
     @Autowired
-    EmployeeRepository employeeRepository;
+    EmployeeService employeeService;
 
     @RequestMapping(method = RequestMethod.GET)
     public Iterable<Employee> get() {
-        return employeeRepository.findAll();
+        return employeeService.listEmployees();
     }
 
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> post(@RequestBody Employee employee) {
-        employeeRepository.save(employee);
+        employeeService.saveEmployee(employee);
 
         HttpHeaders httpHeaders = new HttpHeaders();
 
@@ -49,7 +46,7 @@ public class EmployeeController {
             return new ResponseEntity<>(null, httpHeaders, HttpStatus.BAD_REQUEST);
         }
 
-        employeeRepository.save(employee);
+        employeeService.saveEmployee(employee);
 
 
         return new ResponseEntity<>(null, httpHeaders, HttpStatus.CREATED);
@@ -57,7 +54,7 @@ public class EmployeeController {
 
     @RequestMapping(method = RequestMethod.DELETE)
     public ResponseEntity<?>  delete(@RequestBody Employee employee) {
-        employeeRepository.delete(employee);
+        employeeService.deleteEmployee(employee);
         HttpHeaders httpHeaders = new HttpHeaders();
         return new ResponseEntity<>(null, httpHeaders, HttpStatus.OK);
     }

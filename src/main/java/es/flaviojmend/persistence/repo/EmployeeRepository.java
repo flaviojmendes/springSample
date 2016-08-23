@@ -1,6 +1,6 @@
-package es.flaviojmend.data.repo;
+package es.flaviojmend.persistence.repo;
 
-import es.flaviojmend.data.entity.Employee;
+import es.flaviojmend.persistence.entity.Employee;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

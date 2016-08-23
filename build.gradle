@@ -32,7 +32,7 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile group: 'mysql', name: 'mysql-connector-java'
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-persistence-jpa")
     compile("org.springframework:spring-test")
     compile("org.mockito:mockito-core")
 

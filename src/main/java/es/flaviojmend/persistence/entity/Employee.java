@@ -1,10 +1,9 @@
-package es.flaviojmend.data.entity;
+package es.flaviojmend.persistence.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
 
 /**
  * Created by flavio on 19/07/16.

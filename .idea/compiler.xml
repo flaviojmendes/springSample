@@ -19,8 +19,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="reactor_main" target="1.8" />
-      <module name="reactor_test" target="1.8" />
       <module name="springSample_main" target="1.8" />
       <module name="springSample_test" target="1.8" />
     </bytecodeTargetLevel>
