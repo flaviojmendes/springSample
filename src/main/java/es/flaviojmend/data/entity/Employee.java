@@ -19,35 +19,40 @@ public class Employee {
     private String lastName;
     private Integer registrationNumber;
 
+
     public Long getIdEmployee() {
         return idEmployee;
     }
 
-    public void setIdEmployee(Long idEmployee) {
+    public Employee setIdEmployee(Long idEmployee) {
         this.idEmployee = idEmployee;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public Employee setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public Employee setLastName(String lastName) {
         this.lastName = lastName;
+        return this;
     }
 
     public Integer getRegistrationNumber() {
         return registrationNumber;
     }
 
-    public void setRegistrationNumber(Integer registrationNumber) {
+    public Employee setRegistrationNumber(Integer registrationNumber) {
         this.registrationNumber = registrationNumber;
+        return this;
     }
 }
