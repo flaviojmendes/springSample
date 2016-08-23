@@ -14,17 +14,17 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
+    private Long idEmployee;
     private String name;
     private String lastName;
     private Integer registrationNumber;
 
-    public long getId() {
-        return id;
+    public Long getIdEmployee() {
+        return idEmployee;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setIdEmployee(Long idEmployee) {
+        this.idEmployee = idEmployee;
     }
 
     public String getName() {
