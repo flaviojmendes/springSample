@@ -17,6 +17,11 @@ public class EmployeeService {
     EmployeeRepository employeeRepository;
 
     public void saveEmployee(Employee employee) {
+
+//        if(employee.getName() == null) {
+//            throw new Exception("Não pode ter nome nulo");
+//        }
+//        employee.setRegistrationNumber(geraMatricula());
         employeeRepository.save(employee);
     }
 
